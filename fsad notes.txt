@@ -1,0 +1,266 @@
+code .
+npm create vite@latest jobportal -to create new project
+react framework
+javascript-swc
+npm install-to install node package to execute react applications
+npm run dev-to execute project
+default port no-5173
+npx-3000portno
+8080-springboot
+[]-array
+{}-dictionary(index,key)
+node js starts from index.html
+the content of app.jsx is displayed in index.html
+to link app.css and app.jsx-import './App.css'
+.h3style{-to create a class start with dot
+defining style as a class can be used for any tag
+#header-id
+pt-pixel point
+ctrl c-terminate from project
+npm-node package manager
+node modules-to run any javascript
+react-router-dom-->for routing principles install this lib
+devtools-auto restart
+jpa-create,update,delete
+mysql-database to store data
+spring web-to create apis
+v-view
+modal-actual logic
+act as intermediator-controller
+api-integrate with front end
+java mail center
+gson-converting json data to java(viceversa)
+----------------------------------------------------------------------------------
+open vscode
+click on 3dots
+new terminal
+create a html file
+head-titles of the data
+body-for remaining content
+------------------------------------------------------------
+css:
+cascading style sheet
+===============
+to apply styles to the documents
+types:
+1.Inline css
+the style information is placed in the element/tag itself
+2.internal css
+the style information is placed in the head section of the same html file.
+Selectors:
+a. Element Selector
+b. class selector
+c.id selector 
+3.external css
+The style information is placed in another file. Link that file into the html file.
+--------------------
+schema-create schema-provide database name
+click apply
+again apply on popup window
+finish
+=================================================
+how to create springboot project:
+open eclipse and select workspace
+file-new-spring starter project
+next-provide projectname,type:maven,version:21,package:war,lang:java,groupname,package:klu
+next-add dependencies-java mail sender,spring web,mysql driver,springbootdevtools,jpa
+finish-progress-after completion of progress-project name will display in side bar-open the full of project
+any repositories can add in pom.xml
+go to maven repository in browser-type Gson-select first one-select latest version-copy the code
+go to eclipse-in pom.xml-copy the code to dependencies tag-at last of dependency add it and remove version in the code and save
+if error in 3rd line-select window-preferences-maven-download artifact package,update maven projects -apply and close-it takes time so wait for 2min
+go to src main-java-->package name will display->create 3 package names-modal,controller,repository
+-refresh by right click on base package
+in modal create two classes-user,user manager;in repository 1interface named-UserRepository
+write the code in all three
+retrieve-read-getmapping,update-putmapping,delete-deletemapping,perform write op-postmapping
+==========================================================================
+using postman
+install it first
+continue without an account
+in eclipse-right click on project-run as-springboot app-after deployed succesfully-u can see port no given in application repository
+stop using stop icon on top if u want
+open MySQL
+refresh tables(a table with name user will add)
+execute a select query
+last icon in table can select query editor
+in postman select post-url type from application repository(http://localhost:2025/User/signup)
+to pass input click body tag-selct raw input-select json-
+{
+"fullname":"HARI",
+"emailid":"kundahari@gmail.com",
+"role":"1",
+"password":"123"
+}
+send button- click
+verify database-we can see our data of 1st person
+====================================
+ctrl+shift+c-in firefox
+in postman csrid copy token from firefox
+send request it responses
+test for all three roles
+=====================================
+in the aws management console
+login with the credentials
+search ec2
+click instances
+we can see instances
+launch instances
+name of service:s24
+amazon Linux os
+instance type:t2.micro
+network settings:firewall security groups
+create security grp
+all three protocols enable(http,https,smtp)
+launch instance
+popup window-proceed without generating key pair
+success
+go to instances
+we are able to see s24 instance
+refresh whether the s24 is running or not
+status-2/2 checks passed
+search for rds-aurora and rds-right click and open in new window
+click on db instances
+db dashboard
+create database-standard create
+engine-MySQL
+engine version-8.0.40
+templates-free tier
+settings-db service name-s24
+credentials-
+master username-root
+self managed
+master password-any password without spcl characters(remember pass)
+public access-enable yes
+firewall-create new
+vpc security grp name-mysql_securitygroup
+availability zone-no preference
+create database
+popup-close
+it takes time to create a database
+successfully created
+click on databse name s24
+it goes to other page
+we cans ee vpc_securitygroup
+right click on security grp and open link in new tab
+
+click on security group id
+inbound rules-check whether the port no added or not-edit inbound rules-ip address by default is found-close it-click dropdown and select anywhere ipv4-save rules-success msg
+if port no not available add using edit inbound(3306 ipv4)-save
+open MySQL workbench
+in MySQL connections +symbol available-provide connection name as s24
+hostname: copy endpoint port from rds dashboard
+paste in MySQL workbench
+username:root
+click test connection
+enter password which we created in aws
+successfully made MySQL connection
+s24 is added click on it
+navigator-schemas-right click -create schema-s24_jobportal
+apply
+apply
+execute the query
+database added
+open backend project in eclipse
+go to src/main resources- application.properties
+datasource url-copy it and paste in the next line
+make the old one as command(#)
+copy endpoint from rds-come to backed-replace localhost with that endpoint
+password- make it with hash
+and copy the same in next line
+provide cloud database password
+close application.properties
+and run the application
+open MySQL workbench
+refresh all
+all tables available in backend are available
+create records in user table for testing
+apply and execute
+open menus-create some menu items-3 entries
+apply and finish
+execute 
+open roles-and create some and fill data
+apply and finish
+execute
+open pom.xml
+stop the execution
+go to build tag
+inside build create a tag
+<finalName>jobportal</finalname>
+save pom.xml
+right click on project-run as-maven build
+goals: clean package
+click on run
+it takes time to download files
+build success in console
+go to target in project explorer-refresh-we see war file-jobportal.war
+right click on it and copy and paste in desktop
+go to ec2 window in aws
+ec2 dashboard-s24 service-instance id click-opens new page -connect-again in pop window -connect-opens new tab-connects to virtual machine
+prompt-connecyed with server
+enable super user access
+sudo su(change to root user)
+sudo yum update -y
+complete!-prompt appears
+search in google-command to install java21 in aws
+sudo yum install java-21-amazon-corretto
+right click on console and paste
+execute
+y/n-y
+installs
+java -version
+to crosscheck is it 21 or not
+it displays version(same then ok)
+go to google -search-tomcat 10 download-official website comes-select right click-tar.gz-copy link
+return back to console
+wget paste the link-enter
+it will download tomcat
+ls to see available or not
+extract gz we use- tar -zvf apache-tomcat(press tab automatically full command displays)
+ls to crosscheck-new folder exists
+cd apache(tab to get full)
+cd bin/
+./startup.sh
+tomcat started-command
+ec2-instaces running-instance id-security-security grp name-inbound rules-edit inbound rules-custom tcp-8080
+add rule
+save changes
+copy public ip address from console
+open new tab:paste it in url:8080- enter
+manager app-
+return back to console
+cd ..
+ls
+cd conf
+ls
+sudo nano tomcat-users.xml
+it shows the file
+go to <user username
+down in next line
+<user username="admin" password="pass" roles="manager-gui"/>
+ctrl x
+y/n-y
+enter
+cd ..
+cd bin
+./shutdown.sh
+./startup.sh
+
+=========================
+open frontend in vscode
+in /manager jobportal creates click it white label error as no frontend
+api.js
+and in console run proj npm run build
+creates folder-dist
+go to GitHub and login
+create new repository-s24
+public access
+create repository click
+
+session-set session-secure is there remove it and save
+
+open browser and search for git for windows -click here to download
+-we can see in file explorer and install it from downloads
+close vs code and open again
+cd dist
+execute commands shared in telegram
